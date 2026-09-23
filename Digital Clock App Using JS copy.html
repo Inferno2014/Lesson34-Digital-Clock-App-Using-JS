@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Digital Clock App</title>
+</head>
+
+<body>
+    <span id="day"></span>:
+    <span id="date"></span>:
+    <span id="month"></span>:
+    <span id="year"></span>
+    <script>
+        let d_box = document.getElementById("day");
+        let da_box = document.getElementById("date");
+        let m_box = document.getElementById("month");
+        let y_box = document.getElementById("year");
+
+        function DigiClock() {
+            let d = new Date().getDay();
+            let da = new Date().getDate();
+            let m = new Date().getUTCMonth();
+            let y = new Date().getFullYear();
+            d_box.innerHTML = (d < 10 ? "0" + d : d);
+            da_box.innerHTML = (da < 10 ? "0" + da : da);
+            m_box.innerHTML = (m < 10 ? "0" + m : m);
+            y_box.innerHTML = (y < 10 ? "0" + y : y);
+
+        }
+        DigiClock();
+        setInterval(DigiClock, 1000)
+
+    </script>
+</body>
+
+</html>
